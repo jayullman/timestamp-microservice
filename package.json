@@ -1,0 +1,22 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "Timestamp microservice project for backend freeCodeCamp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libeja/timestamp-microservice.git"
+  },
+  "author": "Jay Ullman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libeja/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/libeja/timestamp-microservice#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

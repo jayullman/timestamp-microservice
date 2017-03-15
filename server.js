@@ -3,6 +3,8 @@ const path = require('path');
 
 var app = express();
 
+var port = process.env.PORT || 8080;
+
 const months = ['January', 'February', 'March', 'April', 'May', 
                 'June', 'July', 'August', 'September', 'October', 
                 'November', 'December'];
@@ -59,6 +61,6 @@ app.get('/*', (req, res) => {
 
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('app is listening on port 3000');
 });

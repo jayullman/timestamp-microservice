@@ -1,9 +1,21 @@
 var express = require('express');
+const path = require('path');
+
 var app = express();
 
 const months = ['January', 'February', 'March', 'April', 'May', 
                 'June', 'July', 'August', 'September', 'October', 
                 'November', 'December'];
+
+
+app.use(express.static('public'));
+
+// app.use('/static', express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  // res.send('Home page');
+  res.sendFile(path.join(__dirname + '/index.html'));
+});                
 
 app.get('/*', (req, res) => {
 
@@ -15,7 +27,6 @@ app.get('/*', (req, res) => {
   const query = decodeURIComponent(req.url.slice(1));
   
   if (isNaN(query)) {
-    console.log('string');
     dateObj = new Date(query);
 
     // obtain unix time from UTC time
@@ -34,7 +45,7 @@ app.get('/*', (req, res) => {
   }
 
   // tests for valid date, if not, returns null for both properties
-  if (natural.indexOf('undefined') > -1 || natural.indexOf('NaN') > -1) {
+  if (natural.indexOf('undefined') > -1 || natural.indexOf('NaN') > -1 || unixStamp === '') {
     unixStamp = null;
     natural = null;
   }

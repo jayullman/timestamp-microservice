@@ -57,7 +57,7 @@ app.get('/*', (req, res) => {
     natural: natural
   }
 
-  res.send(JSON.stringify(responseObj));
+  res.send(responseObj);
 
 });
 
